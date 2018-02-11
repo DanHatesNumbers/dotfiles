@@ -1,0 +1,14 @@
+- name: Get rbenv root
+  command: rbenv root
+  register: rbenv_root
+
+- name: Make directory for rbenv plugin
+  file:
+    path: "{{ rbenv_root.stdout }}/plugins"
+    state: directory
+
+- name: Clone ruby-build repo
+  git:
+    repo: "{{ rubybuild_repo }}"
+    dest: "{{ rbenv_root.stdout }}/plugins/ruby-build"
+    clone: yes

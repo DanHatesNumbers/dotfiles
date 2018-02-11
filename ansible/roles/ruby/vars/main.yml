@@ -1,1 +1,2 @@
 rbenv_repo: https://github.com/rbenv/rbenv.git
+rubybuild_repo: https://github.com/rbenv/ruby-build.git
