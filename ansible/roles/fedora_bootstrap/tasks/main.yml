@@ -3,3 +3,9 @@
     name: dnf
     state: latest
   become: yes
+
+- name: Install libselinux-python
+  dnf:
+    name: libselinux-python
+    state: latest
+  become: yes
