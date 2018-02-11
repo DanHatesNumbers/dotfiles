@@ -3,3 +3,4 @@
     name: chromium
     state: latest
   become: yes
+  when: ansible_distribution == "Fedora"

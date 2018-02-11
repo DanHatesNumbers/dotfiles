@@ -3,6 +3,7 @@
     name: readline-devel
     state: latest
   become: yes
+  when: ansible_distribution == "Fedora"
 
 - name: Get rbenv root
   command: rbenv root
