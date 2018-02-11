@@ -1,0 +1,6 @@
+- name: Install VS Code (Fedora)
+  dnf:
+    name: code
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
