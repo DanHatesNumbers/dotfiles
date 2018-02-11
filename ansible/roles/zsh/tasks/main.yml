@@ -9,7 +9,7 @@
   homebrew:
     name: zsh
     state: latest
-  when: ansible_os_family == "Darwin"
+  when: ansible_distribution == "MacOSX"
 
 - name: Get zsh install location
   shell: command -v zsh
