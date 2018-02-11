@@ -1,0 +1,3 @@
+[submodule "src/prezto"]
+	path = src/prezto
+	url = https://github.com/DanHatesNumbers/prezto.git
