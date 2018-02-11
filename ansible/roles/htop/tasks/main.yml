@@ -1,0 +1,6 @@
+- name: Install htop (Fedora)
+  dnf:
+    name: htop
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
