@@ -5,6 +5,23 @@
   become: yes
   when: ansible_distribution == "Fedora"
 
+- name: Symlink ~/.zprezto
+  file:
+    src: "{{ ansible_env.HOME }}/dotfiles/src/prezto"
+    dest: "{{ ansible_env.HOME }}/.zprezto"
+    state: link
+
+- name: Get Prezto runcoms from dotfiles
+  shell: ls ~/.zprezto/runcoms | grep -v README.md
+  register: prezto_runcoms
+
+- name: Symlink Prezto runcoms
+  file:
+    src: "{{ ansible_env.HOME }}/.zprezto/runcoms/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.{{ item }}"
+    state: link
+  with_items: "{{ prezto_runcoms.stdout_lines }}"
+
 - name: Get zsh install location
   shell: command -v zsh
   register: zsh_location
