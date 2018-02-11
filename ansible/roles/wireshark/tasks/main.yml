@@ -1,0 +1,6 @@
+- name: Install Wireshark (Fedora)
+  dnf:
+    name: wireshark-gtk
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
