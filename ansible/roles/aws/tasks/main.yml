@@ -1,0 +1,6 @@
+- name: Install AWS CLI (Fedora)
+  dnf:
+    name: awscli
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
