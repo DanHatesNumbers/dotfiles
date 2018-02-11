@@ -1,0 +1,6 @@
+- name: Install Firefox Stable (Fedora)
+  dnf:
+    name: firefox
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
