@@ -1,3 +1,4 @@
 - import_tasks: rbenv.yml
 - import_tasks: ruby_build.yml
 - import_tasks: latest_stable_ruby.yml
+- import_tasks: rbenv_bundler.yml

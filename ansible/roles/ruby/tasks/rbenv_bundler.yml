@@ -1,0 +1,15 @@
+- name: Get rbenv root
+  command: rbenv root
+  register: rbenv_root
+
+- name: Clone rbenv-bundler
+  git:
+    repo: "{{ rbenvbundler_repo }}"
+    dest: "{{ rbenv_root.stdout }}/plugins/bundler"
+    clone: yes
+
+- name: Install global bundler gem
+  gem: 
+    name: bundler
+    state: latest
+    executable: "{{ rbenv_root.stdout }}/shims/gem"
