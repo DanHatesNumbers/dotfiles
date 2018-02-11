@@ -1,0 +1,6 @@
+- name: Install VLC (Fedora)
+  dnf:
+    name: vlc
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
