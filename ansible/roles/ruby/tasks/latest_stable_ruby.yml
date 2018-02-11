@@ -1,0 +1,21 @@
+- name: Setup ruby dependencies (Fedora)
+  dnf:
+    name: readline-devel
+    state: latest
+  become: yes
+
+- name: Get rbenv root
+  command: rbenv root
+  register: rbenv_root
+
+- name: Get latest stable ruby version
+  shell: rbenv install -l | grep -v - | tail -1
+  register: latest_ruby_version
+
+- name: Install latest stable ruby version
+  command: rbenv install -s -v {{ latest_ruby_version.stdout }}
+  environment:
+    MAKE_OPTS: -j {{ ansible_processor_vcpus }}
+
+- name: Setup latest stable ruby version as global default
+  command: rbenv global {{ latest_ruby_version.stdout }}
