@@ -5,6 +5,12 @@
   become: yes
   when: ansible_distribution == "Fedora"
 
+- name: Install ZSH (MacOS)
+  homebrew:
+    name: zsh
+    state: latest
+  when: ansible_os_family == "Darwin"
+
 - name: Get zsh install location
   shell: command -v zsh
   register: zsh_location
