@@ -1,0 +1,6 @@
+- name: Install Filezilla (Fedora)
+  dnf:
+    name: filezilla
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
