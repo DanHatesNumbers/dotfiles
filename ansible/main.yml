@@ -17,3 +17,4 @@
   roles:
     - zsh
     - tmux
+    - dotfiles

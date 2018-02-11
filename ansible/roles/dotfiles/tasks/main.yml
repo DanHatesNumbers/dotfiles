@@ -1,0 +1,6 @@
+- name: Symlink configs
+  file:
+    src: ~/dotfiles/{{ item.key }}
+    dest: "{{ item.value }}"
+    state: link
+  with_dict: "{{ conf_symlinks }}"
