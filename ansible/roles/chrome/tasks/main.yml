@@ -1,0 +1,5 @@
+- name: Install Chromium Stable (Fedora)
+  dnf:
+    name: chromium
+    state: latest
+  become: yes
