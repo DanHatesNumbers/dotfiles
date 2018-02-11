@@ -26,3 +26,4 @@
     - filezilla
     - wireshark
     - htop
+    - openssl

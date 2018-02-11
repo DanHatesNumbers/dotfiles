@@ -1,0 +1,9 @@
+- name: Install OpenSSL and Development Headers (Fedora)
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - openssl
+    - openssl-devel
+  become: yes
+  when: ansible_distribution == "Fedora"
