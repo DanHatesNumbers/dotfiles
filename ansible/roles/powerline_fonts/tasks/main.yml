@@ -1,0 +1,12 @@
+- name: Gather Source Code Pro for Powerline filenames
+  shell: ls {{ ansible_env.HOME }}/dotfiles/src/powerline-fonts/SourceCodePro | grep .otf
+  register: fonts
+
+- name: Copy Source Code Pro for Powerline fonts to local dir
+  copy: 
+    src: "{{ ansible_env.HOME }}/dotfiles/src/powerline-fonts/SourceCodePro/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.fonts/{{ item }}"
+  with_items: "{{ fonts.stdout_lines }}"
+
+- name: Rebuild font cache
+  command: fc-cache -vf {{ ansible_env.HOME }}/.fonts
