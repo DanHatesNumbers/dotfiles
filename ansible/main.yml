@@ -16,3 +16,4 @@
 - hosts: all
   roles:
     - zsh
+    - tmux

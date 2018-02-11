@@ -1,0 +1,6 @@
+- name: Install Tmux (Fedora)
+  dnf:
+    name: tmux
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
