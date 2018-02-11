@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - group_by: key=os_{{ ansible_distribution }}
+      tags: always
+    - name: Update dotfiles repo
+      git:
+        repo: https://github.com/DanHatesNumbers/dotfiles.git
+        dest: ~/dotfiles
+      ignore_errors: yes
+
+- hosts: os_Fedora
+  roles:
+    - fedora_bootstrap
+
+- hosts: all
+  roles:
+    - zsh

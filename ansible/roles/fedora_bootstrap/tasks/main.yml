@@ -1,0 +1,5 @@
+- name: Install Python-DNF
+  pip:
+    name: dnf
+    state: latest
+  become: yes
