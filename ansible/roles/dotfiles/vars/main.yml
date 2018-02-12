@@ -1,2 +1,3 @@
 conf_symlinks:
-  .tmux.conf: ~/.tmux.conf
+  src/.tmux/.tmux.conf: ~/.tmux.conf
+  .tmux.conf.local: ~/.tmux.conf.local
