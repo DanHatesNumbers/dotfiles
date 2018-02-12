@@ -4,3 +4,6 @@
 [submodule "src/powerline-fonts"]
 	path = src/powerline-fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "src/prezto-contrib"]
+	path = src/prezto-contrib
+	url = https://github.com/belak/prezto-contrib.git
