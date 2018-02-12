@@ -1,11 +1,18 @@
 conf_dirs:
   - ~/.aws
+  - ~/.ssh
 
 conf_symlinks:
   src/.tmux/.tmux.conf: ~/.tmux.conf
   .tmux.conf.local: ~/.tmux.conf.local
   gitconfig: ~/.gitconfig
   aws_config: ~/.aws/config
+  ssh/config: ~/.ssh/config
+  ssh/id_ed25519_kube_2017-11-04.pub: ~/.ssh/id_ed25519_kube_2017-11-04.pub
+  ssh/id_rsa.pub: ~/.ssh/id_rsa.pub
 
 conf_vault_files:
   aws_credentials: ~/.aws/credentials
+  ssh/id_ed25519_kube_2017-11-04: ~/.ssh/id_ed25519_kube_2017-11-04
+  ssh/id_rsa: ~/.ssh/id_rsa
+  
