@@ -265,3 +265,12 @@ tmux_conf_copy_to_os_clipboard=false
 
 # move status line to top
 #set -g status-position top
+
+# replace default split bindings
+unbind '-'
+unbind '_'
+bind | split-window -h
+bind - split-window -v
+
+# don't automatically rename windows
+set-option -g allow-rename off
