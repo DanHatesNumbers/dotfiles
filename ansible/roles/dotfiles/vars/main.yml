@@ -10,6 +10,7 @@ conf_symlinks:
   ssh/config: ~/.ssh/config
   ssh/id_ed25519_kube_2017-11-04.pub: ~/.ssh/id_ed25519_kube_2017-11-04.pub
   ssh/id_rsa.pub: ~/.ssh/id_rsa.pub
+  vscode_settings.json: ~/.config/Code/User/settings.json
 
 conf_vault_files:
   aws_credentials: ~/.aws/credentials
