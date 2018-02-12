@@ -1,6 +1,7 @@
 conf_dirs:
   - ~/.aws
   - ~/.ssh
+  - ~/.config/nvim
 
 conf_symlinks:
   src/.tmux/.tmux.conf: ~/.tmux.conf
@@ -11,6 +12,7 @@ conf_symlinks:
   ssh/id_ed25519_kube_2017-11-04.pub: ~/.ssh/id_ed25519_kube_2017-11-04.pub
   ssh/id_rsa.pub: ~/.ssh/id_rsa.pub
   vscode_settings.json: ~/.config/Code/User/settings.json
+  init.vim: ~/.config/nvim/init.vim
 
 conf_vault_files:
   aws_credentials: ~/.aws/credentials
