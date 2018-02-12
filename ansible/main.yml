@@ -17,7 +17,7 @@
   roles:
     - zsh
     - tmux
-    - dotfiles
+    - { role: dotfiles, tags: ['debug'] }
     - ssh
     - ruby
     - chrome
@@ -31,3 +31,4 @@
     - aws
     - powerline_fonts
     - rust
+    - { role: neovim, tags: ['debug'] }

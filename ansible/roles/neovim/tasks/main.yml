@@ -1,0 +1,9 @@
+- name: Install Neovim
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  become: yes
+  with_items:
+    - neovim
+    - python2-neovim
+    - python3-neovim
