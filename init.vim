@@ -7,6 +7,10 @@ set ts=4
 set shiftwidth=4
 set ai sw=8
 
+" Highlight matches when searching
+" Use C-l to clear
+set hlsearch
+
 """""
 " Key mappings
 """""
@@ -25,6 +29,9 @@ nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
 
 " toggle line wrap
 nnoremap <silent> <leader>w :set wrap! wrap?<CR>
+
+" clear search highlights
+nnoremap <silent> <leader>cl :nohlsearch<CR>
 
 " switch to last active buffer
 nnoremap <silent> <leader>bb <C-^>
