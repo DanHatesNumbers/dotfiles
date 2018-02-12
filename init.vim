@@ -11,6 +11,13 @@ set ai sw=8
 " Use C-l to clear
 set hlsearch
 
+" Line Numbering
+set number
+
+" Open new splits below and to the right
+set splitright
+set splitbelow
+
 """""
 " Key mappings
 """""
