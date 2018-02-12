@@ -1,0 +1,5 @@
+- name: Symlink ~/.zprezto/contrib
+  file:
+    src: "{{ ansible_env.HOME }}/dotfiles/src/prezto-contrib"
+    dest: "{{ ansible_env.HOME }}/.zprezto-contrib"
+    state: link

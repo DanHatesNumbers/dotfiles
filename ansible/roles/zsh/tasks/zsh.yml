@@ -1,0 +1,25 @@
+- name: Install ZSH (Fedora)
+  dnf:
+    name: zsh
+    state: latest
+  become: yes
+  when: ansible_distribution == "Fedora"
+
+- name: Get zsh install location
+  shell: command -v zsh
+  register: zsh_location
+
+- name: Add zsh to /etc/shells
+  lineinfile:
+    dest: /etc/shells
+    line: "{{ item }}"
+    state: present
+  with_items: "{{ zsh_location.stdout_lines }}"
+  become: yes
+
+- name: Make zsh default shell for current user
+  user: 
+    name: "{{ ansible_env.USER }}"
+    shell: "{{ item }}"
+  with_items: "{{ zsh_location.stdout_lines }}"
+  become: yes
