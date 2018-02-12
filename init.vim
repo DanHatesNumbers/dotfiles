@@ -1,4 +1,13 @@
 """""
+" Initial Settings
+"""""
+
+" set tabs and indents
+set ts=4
+set shiftwidth=4
+set ai sw=8
+
+"""""
 " Key mappings
 """""
 
