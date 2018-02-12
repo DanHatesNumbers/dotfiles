@@ -7,3 +7,6 @@
 [submodule "src/prezto-contrib"]
 	path = src/prezto-contrib
 	url = https://github.com/belak/prezto-contrib.git
+[submodule "src/.tmux"]
+	path = src/.tmux
+	url = https://github.com/gpakosz/.tmux.git
