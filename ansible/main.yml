@@ -3,7 +3,7 @@
   tasks:
     - group_by: key=os_{{ ansible_distribution }}
       tags: always
-    - name: Update dotfiles repo
+1   - name: Update dotfiles repo
       git:
         repo: https://github.com/DanHatesNumbers/dotfiles.git
         dest: ~/dotfiles
@@ -17,7 +17,7 @@
   roles:
     - zsh
     - tmux
-    - { role: dotfiles, tags: ['debug'] }
+    - dotfiles
     - ssh
     - ruby
     - chrome
@@ -31,4 +31,4 @@
     - aws
     - powerline_fonts
     - rust
-    - { role: neovim, tags: ['debug'] }
+    - neovim
