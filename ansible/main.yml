@@ -3,7 +3,7 @@
   tasks:
     - group_by: key=os_{{ ansible_distribution }}
       tags: always
-1   - name: Update dotfiles repo
+    - name: Update dotfiles repo
       git:
         repo: https://github.com/DanHatesNumbers/dotfiles.git
         dest: ~/dotfiles
