@@ -1,4 +1,11 @@
+conf_dirs:
+  - ~/.aws
+
 conf_symlinks:
   src/.tmux/.tmux.conf: ~/.tmux.conf
   .tmux.conf.local: ~/.tmux.conf.local
   gitconfig: ~/.gitconfig
+  aws_config: ~/.aws/config
+
+conf_vault_files:
+  aws_credentials: ~/.aws/credentials

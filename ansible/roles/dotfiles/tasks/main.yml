@@ -1,6 +1,20 @@
+- name: Create dotfile directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items: "{{ conf_dirs }}"
+
 - name: Symlink configs
   file:
     src: ~/dotfiles/{{ item.key }}
     dest: "{{ item.value }}"
     state: link
   with_dict: "{{ conf_symlinks }}"
+
+- name: Copy vault files
+  copy:
+    src: ~/dotfiles/{{ item.key }}
+    dest: "{{ item.value }}"
+    mode: 0600
+  with_dict: "{{ conf_vault_files }}"
+    
