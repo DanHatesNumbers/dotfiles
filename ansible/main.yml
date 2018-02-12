@@ -30,3 +30,4 @@
     - openssl
     - aws
     - powerline_fonts
+    - rust

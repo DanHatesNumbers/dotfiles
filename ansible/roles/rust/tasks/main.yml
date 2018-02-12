@@ -1,0 +1,33 @@
+- name: Create temp file for Rustup
+  tempfile:
+    state: file
+  register: rustup_temp
+
+- name: Download Rustup to temp file
+  get_url: 
+    url: https://sh.rustup.rs
+    dest: "{{ rustup_temp.path }}"
+
+- name: Run Rustup installer
+  command: sh {{ rustup_temp.path }} -y
+
+- name: Add toolchains
+  command: rustup install {{ item }}
+  with_items:
+    - stable
+    - nightly
+
+- name: Make stable toolchain default
+  command: rustup default stable
+
+- name: Add rust stable components
+  command: rustup component add {{ item }} --toolchain stable
+  with_items:
+    - rls-preview
+    - rust-analysis
+    - rust-src
+
+- name: Install Racer
+  command: cargo install racer
+  args:
+    creates: ~/.cargo/bin/racer
