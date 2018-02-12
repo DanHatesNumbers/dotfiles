@@ -1,6 +1,2 @@
-- name: Install VS Code (Fedora)
-  dnf:
-    name: code
-    state: latest
-  become: yes
-  when: ansible_distribution == "Fedora"
+- import_tasks: install.yml
+- import_tasks: extensions.yml

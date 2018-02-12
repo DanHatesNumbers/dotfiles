@@ -1,0 +1,3 @@
+- name: Install VS Code extensions
+  command: code --install-extension {{ item }}
+  with_items: "{{ extensions }}"

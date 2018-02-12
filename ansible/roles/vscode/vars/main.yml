@@ -1,0 +1,14 @@
+extensions:
+  - CoenraadS.bracket-pair-colorizer
+  - DavidAnson.vscode-markdownlint
+  - bungcip.better-toml
+  - codeflows.vaulty
+  - kalitaalexey.vscode-rust
+  - ms-vscode.cpptools
+  - ms-vscode.wordcount
+  - rupisaini.vscode-ansible-linter
+  - rust-lang.rust
+  - sidneys1.gitconfig
+  - vadimcn.vscode-lldb
+  - vector-of-bool.gitflow
+  - vscoss.vscode-ansible
