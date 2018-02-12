@@ -1,0 +1,27 @@
+- name: Harden SSH Server Configuration (Mozilla Modern)
+  copy:
+    src: ~/dotfiles/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
+  become: yes
+
+- name: Get all DH moduli over 3071 bits in length
+  command: awk '$5 >= 3071' /etc/ssh/moduli
+  register: dh_moduli
+
+- name: Restrict DH moduli to 3071 bits length or higher
+  copy:
+    dest: /etc/ssh/moduli_test
+    content: "{{ dh_moduli.stdout }}"
+  become: yes
+
+- name: Authorized Keys
+  copy:
+    src: ~/dotfiles/ssh/authorized_keys
+    dest: ~/.ssh/authorized_keys
+    mode: 600
+
+- name: ~/.ssh permissions
+  file:
+    path: "{{ item.key }}"
+    mode: "{{ item.value }}"
+  with_dict: "{{ permissions }}"

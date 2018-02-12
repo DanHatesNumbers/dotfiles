@@ -18,6 +18,7 @@
     - zsh
     - tmux
     - dotfiles
+    - ssh
     - ruby
     - chrome
     - firefox

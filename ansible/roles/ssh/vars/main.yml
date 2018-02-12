@@ -1,0 +1,6 @@
+permissions:
+  ~/.ssh: '0700'
+  ~/.ssh/authorized_keys: '0600'
+  ~/.ssh/id_ed25519_kube_2017-11-04: '0600'
+  ~/.ssh/id_rsa: '0600'
+  ~/.ssh/known_hosts: '0644'
