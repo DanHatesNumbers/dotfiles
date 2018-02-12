@@ -15,15 +15,3 @@
   args:
     chdir: "{{ ansible_env.HOME }}/.rbenv"
   ignore_errors: yes
-
-- name: Add rbenv to path
-  lineinfile:
-    path: "{{ ansible_env.HOME }}/.zshrc"
-    line: "export PATH=\"$HOME/.rbenv/bin:$PATH\""
-    state: present
-
-- name: Setup rbenv in shell
-  lineinfile:
-    path: "{{ ansible_env.HOME }}/.zshrc"
-    line: "eval \"$(rbenv init -)\""
-    state: present
