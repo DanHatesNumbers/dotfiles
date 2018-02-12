@@ -1,0 +1,10 @@
+- name: Install Ruby 2.4.2 for blog
+  command: rbenv install -s -v --patch 2.4.2
+  environment:
+    MAKE_OPTS: -j {{ ansible_processor_vcpus }}
+
+- name: Install bundler gem for Ruby 2.4.2
+  gem: 
+    name: bundler
+    state: latest
+    executable: "{{ rbenv_root.stdout }}/versions/2.4.2/bin/gem"
