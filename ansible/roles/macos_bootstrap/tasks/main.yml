@@ -1,0 +1,8 @@
+- name: Update Homebrew
+  homebrew:
+    update_homebrew: yes
+
+- name: Setup Homebrew Cask
+  homebrew_tap:
+    name: caskroom/cask
+    state: present

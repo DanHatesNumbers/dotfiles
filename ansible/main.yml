@@ -13,6 +13,10 @@
   roles:
     - fedora_bootstrap
 
+- hosts: os_MacOSX
+  roles:
+    - macos_bootstrap
+
 - hosts: all
   roles:
     - zsh
