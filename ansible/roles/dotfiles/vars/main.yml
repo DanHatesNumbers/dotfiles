@@ -18,4 +18,4 @@ conf_vault_files:
   aws_credentials: ~/.aws/credentials
   ssh/id_ed25519_kube_2017-11-04: ~/.ssh/id_ed25519_kube_2017-11-04
   ssh/id_rsa: ~/.ssh/id_rsa
-  
+  zshrc_work: ~/.zshrc_work
