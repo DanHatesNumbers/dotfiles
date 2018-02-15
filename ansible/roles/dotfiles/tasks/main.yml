@@ -1,16 +1,16 @@
 - name: Setup common dotfiles
   import_tasks: common.yml
   vars_files:
-    - vars/common.yml
+    - "vars/common.yml"
 
 - name: Setup Personal dotfiles
   import_tasks: common.yml
   vars_files:
-    - vars/personal.yml
+    - "vars/personal.yml"
   when: ansible_distribution != 'MacOSX'
 
 - name: Setup Work dotfiles
   import_tasks: common.yml
   vars_files:
-    - vars/work.yml
+    - "vars/work.yml"
   when: ansible_distribution == 'MacOSX'
