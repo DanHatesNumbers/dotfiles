@@ -13,4 +13,4 @@
   import_tasks: common.yml
   vars_files:
     - vars/work.yml
-    when: ansible_distribution == 'MacOSX'
+  when: ansible_distribution == 'MacOSX'
