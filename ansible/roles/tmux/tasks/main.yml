@@ -4,3 +4,9 @@
     state: latest
   become: yes
   when: ansible_distribution == "Fedora"
+
+- name: Install Tmux (MacOS)
+  homebrew:
+    name: tmux
+    state: latest
+  when: ansible_distribution == "MacOSX"
