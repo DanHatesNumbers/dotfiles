@@ -1,20 +1,16 @@
-- name: Create dotfile directories
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items: "{{ conf_dirs }}"
+- name: Setup common dotfiles
+  import_tasks: common.yml
+  vars_files:
+    - vars/common.yml
 
-- name: Symlink configs
-  file:
-    src: ~/dotfiles/{{ item.key }}
-    dest: "{{ item.value }}"
-    state: link
-  with_dict: "{{ conf_symlinks }}"
+- name: Setup Personal dotfiles
+  import_tasks: common.yml
+  vars_files:
+    - vars/personal.yml
+  when: ansible_distribution != 'MacOSX'
 
-- name: Copy vault files
-  copy:
-    src: ~/dotfiles/{{ item.key }}
-    dest: "{{ item.value }}"
-    mode: 0600
-  with_dict: "{{ conf_vault_files }}"
-    
+- name: Setup Work dotfiles
+  import_tasks: common.yml
+  vars_files:
+    - vars/work.yml
+    when: ansible_distribution == 'MacOSX'

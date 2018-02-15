@@ -1,0 +1,5 @@
+conf_symlinks:
+  work/ssh/config: ~/.ssh/config
+
+conf_vault_files:
+  work/zshrc_work: ~/.zshrc_work

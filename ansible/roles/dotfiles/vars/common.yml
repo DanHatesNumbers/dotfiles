@@ -1,0 +1,10 @@
+conf_dirs:
+  - ~/.aws
+  - ~/.ssh
+  - ~/.config/nvim
+
+conf_symlinks:
+  src/.tmux/.tmux.conf: ~/.tmux.conf
+  common/.tmux.conf.local: ~/.tmux.conf.local
+  common/vscode_settings.json: ~/.config/Code/User/settings.json
+  common/init.vim: ~/.config/nvim/init.vim

@@ -1,0 +1,11 @@
+conf_symlinks:
+  personal/gitconfig: ~/.gitconfig
+  personal/aws_config: ~/.aws/config
+  personal/ssh/config: ~/.ssh/config
+  personal/ssh/id_ed25519_kube_2017-11-04.pub: ~/.ssh/id_ed25519_kube_2017-11-04.pub
+  personal/ssh/id_rsa.pub: ~/.ssh/id_rsa.pub
+
+conf_vault_files:
+  personal/aws_credentials: ~/.aws/credentials
+  personal/ssh/id_ed25519_kube_2017-11-04: ~/.ssh/id_ed25519_kube_2017-11-04
+  personal/ssh/id_rsa: ~/.ssh/id_rsa
